@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// model == tabela 
+// user == nome da tabela
+//id == nome coluna 
+//String == tipo de dado da coluna
+// @id indica que será a chave primária
+//@default(uuid()) == indica que essa chave primária é auto-incrementada(auto_increment)
+
+model User {
+  id String @id @default(uuid())
+  name String 
+}
