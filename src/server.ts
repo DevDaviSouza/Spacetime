@@ -2,10 +2,10 @@ import fastify from 'fastify';
 import { PrismaClient } from '@prisma/client';
 
 const app = fastify();
-const prisma = new PrismaClient();
+const db = new PrismaClient();
 
 app.get('/hello', async () => {
-    const users = await prisma.user.findMany();
+    const users = await db.user.findMany();
 
     return users;
 });
